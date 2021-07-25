@@ -4,20 +4,21 @@
 //
 //  Created by truemac on 2021/07/21.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
-    
-
+   
     @IBOutlet weak var display: UILabel!
     
     var isPlus = false;
     var isMinus = false;
+    var isCross = false;
+    var isDiv = false;
     
     var sum = Int();
     var num = Int();
     var userTyping = false;
+    
     @IBAction func touch1(_ sender: UIButton) {
         
         // func clear
@@ -56,6 +57,20 @@ class ViewController: UIViewController {
             isMinus = false
             display.text = String(sum)
         }
+       
+        if isCross {
+            sum  = sum * Int(display.text!)!
+            print("result Cross", sum)
+            isCross = false
+            display.text = String(sum)
+        }
+        
+        if isDiv {
+            sum  = sum / Int(display.text!)!
+            print("result Div", sum)
+            isDiv = false
+            display.text = String(sum)
+        }
     }
     
     
@@ -74,13 +89,33 @@ class ViewController: UIViewController {
         if(isMinus==false){
             num = Int(display.text!)!
             print("num",num)
-            sum = num - sum
+            sum = num + sum
             print("sum",sum)
             userTyping = false
             isMinus = true
         }
     }
     
+    @IBAction func cross(_ sender: Any) {
+        if(isCross==false){
+            num = Int(display.text!)!
+            print("num",num)
+            sum = num + sum
+            print("sum",sum)
+            userTyping = false
+            isCross = true
+        }
+    }
+    
+    @IBAction func div(_ sender: Any) {
+        if(isDiv==false){
+            num = Int(display.text!)!
+            print("num",num)
+            sum =  num + sum
+            print("sum",sum)
+            userTyping = false
+            isDiv = true
+        }
+    }
     
 }
-
