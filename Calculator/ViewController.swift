@@ -42,7 +42,52 @@ class ViewController: UIViewController {
         sum = 0;
         num = 0;
     }
-    
+   
+    // + 버튼 기능
+    @IBAction func plus(_ sender: Any) {
+        if(isPlus==false){
+            num = Int(display.text!)!
+            print("num",num)
+            sum = num + sum
+            print("sum",sum)
+            userTyping = false
+            isPlus = true
+        }
+    }
+    // - 버튼 기능
+    @IBAction func minus(_ sender: Any) {
+        if(isMinus==false){
+            num = Int(display.text!)!
+            print("num",num)
+            sum = num + sum
+            print("sum",sum)
+            userTyping = false
+            isMinus = true
+        }
+    }
+    // × 버튼 기능
+    @IBAction func cross(_ sender: Any) {
+        if(isCross==false){
+            num = Int(display.text!)!
+            print("num",num)
+            sum = num + sum
+            print("sum",sum)
+            userTyping = false
+            isCross = true
+        }
+    }
+    // ÷ 버튼 기능
+    @IBAction func div(_ sender: Any) {
+        if(isDiv==false){
+            num = Int(display.text!)!
+            print("num",num)
+            sum =  num + sum
+            print("sum",sum)
+            userTyping = false
+            isDiv = true
+        }
+    }
+    // = 버튼 기능
     @IBAction func result(_ sender: Any) {
         if isPlus{
             sum  = sum + Int(display.text!)!
@@ -70,51 +115,6 @@ class ViewController: UIViewController {
             print("result Div", sum)
             isDiv = false
             display.text = String(sum)
-        }
-    }
-    
-    
-    @IBAction func plus(_ sender: Any) {
-        if(isPlus==false){
-            num = Int(display.text!)!
-            print("num",num)
-            sum = num + sum
-            print("sum",sum)
-            userTyping = false
-            isPlus = true
-        }
-    }
-    
-    @IBAction func minus(_ sender: Any) {
-        if(isMinus==false){
-            num = Int(display.text!)!
-            print("num",num)
-            sum = num + sum
-            print("sum",sum)
-            userTyping = false
-            isMinus = true
-        }
-    }
-    
-    @IBAction func cross(_ sender: Any) {
-        if(isCross==false){
-            num = Int(display.text!)!
-            print("num",num)
-            sum = num + sum
-            print("sum",sum)
-            userTyping = false
-            isCross = true
-        }
-    }
-    
-    @IBAction func div(_ sender: Any) {
-        if(isDiv==false){
-            num = Int(display.text!)!
-            print("num",num)
-            sum =  num + sum
-            print("sum",sum)
-            userTyping = false
-            isDiv = true
         }
     }
     
