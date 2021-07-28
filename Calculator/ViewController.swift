@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var isMinus = false;
     var isCross = false;
     var isDiv = false;
+    var isPercent = false;
     
     var sum = Int();
     var num = Int();
@@ -87,6 +88,27 @@ class ViewController: UIViewController {
             isDiv = true
         }
     }
+    // +/- 버튼 기능
+    @IBAction func plusMinus(_ sender: Any) {
+        
+    }
+    
+    // % 버튼 기능
+    @IBAction func percent(_ sender: Any) {
+        if(isPercent==false){
+            num = Int(display.text!)!
+            print("num",num)
+            
+            sum = sum / 100
+            print("result Percent", sum)
+            display.text = String(Double(sum))
+            print("display.text Percent",display.text!)
+            userTyping = false
+            isPercent = true
+        }
+    }
+    
+    
     // = 버튼 기능
     @IBAction func result(_ sender: Any) {
         if isPlus{
@@ -115,6 +137,14 @@ class ViewController: UIViewController {
             print("result Div", sum)
             isDiv = false
             display.text = String(sum)
+        }
+        
+        if isPercent {
+            //sum  = Int(Double(sum / 100))
+            //print("result Percent", sum)
+            //isPercent = false
+            //display.text = String(Double(sum))
+            isPercent = true
         }
     }
     
